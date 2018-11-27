@@ -11,7 +11,7 @@ Repozitorij z gradivi pri predmetu APPR v študijskem letu 2018/19
 
 V projektu bom analiziral priseljevanje v in iz Slovenije od leta 1996 dalje. Analiziral bom priseljevanje po spolu in starosti. Pogledal bom tudi katere narodnosti so priseljenci v Slovenijo. Zanima me tudi iz katerih držav se priseljujejo v Slovenijo in v katere države se najbolj izseljujejo. Za konec pa bom analiziral še priseljevanje in izseljevanje po statističnih regeijah in po občinah.
 
-Vir podatkov:https://pxweb.stat.si/pxweb/Database/Dem_soc/05_prebivalstvo/40_selitve/05_05N10_meddrzavne/05_05N10_meddrzavne.asp
+Vir podatkov: https://pxweb.stat.si/pxweb/Database/Dem_soc/05_prebivalstvo/40_selitve/05_05N10_meddrzavne/05_05N10_meddrzavne.asp
 
 Tabele:
 
