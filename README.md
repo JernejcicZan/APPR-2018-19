@@ -7,19 +7,19 @@ Repozitorij z gradivi pri predmetu APPR v študijskem letu 2018/19
 * [![Shiny](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/JernejcicZan/APPR-2018-19/master?urlpath=shiny/APPR-2018-19/projekt.Rmd) Shiny
 * [![RStudio](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/JernejcicZan/APPR-2018-19/master?urlpath=rstudio) RStudio
 
-## Analiza priseljevanja in izseljevanja v Sloveniji
+## Analiza migracij v Evropi
 
-V projektu bom analiziral priseljevanje v in iz Slovenije od leta 1996 dalje. Analiziral bom priseljevanje po spolu in starosti. Pogledal bom tudi katere narodnosti so priseljenci v Slovenijo. Zanima me tudi iz katerih držav se priseljujejo v Slovenijo in v katere države se najbolj izseljujejo. Za konec pa bom analiziral še priseljevanje in izseljevanje po statističnih regeijah in po občinah.
+V projektu bom analiziral priseljevanje v in izseljevanje v evropskih državah v zadnjih nekaj letih. Analiziral bom priseljevanje po spolu in starosti. Pogledal bom tudi katere narodnosti so priseljenci v Evropi. Zanima me tudi iz katerih držav se najbolj izseljujejo in  v katere države se najbolj priseljujejo. Za konec pa bom analiziral še priseljevanje in izseljevanje po posameznih državah in pogldeal neto priseljevanja.
 
-Vir podatkov: https://pxweb.stat.si/pxweb/Database/Dem_soc/05_prebivalstvo/40_selitve/05_05N10_meddrzavne/05_05N10_meddrzavne.asp
+Vir podatkov: https://ec.europa.eu/eurostat/data/database
 
 Tabele:
 
 * Migracije po spolu in starostnih skupinah
 * Narodnosti priseljencev
-* Države iz katerih prihajajo priseljenci
-* Države kamor se izseljujejo
-* Priseljevanje, izseljevanje po regijah in občinah
+* Izseljevanje iz držav
+* Priseljevanje v države
+* Neto priseljevanja
 
 ## Program
 
