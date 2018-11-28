@@ -9,7 +9,7 @@ Repozitorij z gradivi pri predmetu APPR v študijskem letu 2018/19
 
 ## Analiza migracij v Evropi
 
-V projektu bom analiziral priseljevanje v in izseljevanje v evropskih državah v zadnjih nekaj letih. Analiziral bom priseljevanje po spolu in starosti. Pogledal bom tudi katere narodnosti so priseljenci v Evropi. Zanima me tudi iz katerih držav se najbolj izseljujejo in  v katere države se najbolj priseljujejo. Za konec pa bom analiziral še priseljevanje in izseljevanje po posameznih državah in pogldeal neto priseljevanja.
+V projektu bom analiziral priseljevanje v in izseljevanje v evropskih državah v zadnjih nekaj letih. Analiziral bom priseljevanje po spolu in starosti. Pogledal bom tudi katere narodnosti so priseljenci v Evropi. Zanima me tudi iz katerih držav se najbolj izseljujejo in  v katere države se najbolj priseljujejo. Za konec pa bom analiziral še priseljevanje in izseljevanje po posameznih delih Evrope (severna, vzhodna, ...) in pogledal neto priseljevanja.
 
 Vir podatkov: https://ec.europa.eu/eurostat/data/database
 
