@@ -15,11 +15,11 @@ Vir podatkov: https://ec.europa.eu/eurostat/data/database
 
 Tabele:
 
-* Migracije po spolu in starostnih skupinah
-* Narodnosti priseljencev
-* Izseljevanje iz držav
-* Priseljevanje v države
-* Neto priseljevanja
+* Migracije po spolu in starostnih skupinah (leto, spol, starostna skupina, priselitev, odselitev)
+* Narodnosti priseljencev (leto, narodnost priseljencev)
+* Izseljevanje iz držav (leto, država, št. izseljencev)
+* Priseljevanje v države (leto, država, št. priseljencev)
+* Neto priseljevanja (leto, država, neto)
 
 ## Program
 
