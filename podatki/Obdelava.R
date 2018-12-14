@@ -1,0 +1,7 @@
+#Podatki uvoženi
+BDP_in_rast
+emi_next_destination
+emi_po_starosti_in_spolu
+imig_po_spolu_in_starosti
+imigr_po_narodnosti
+#Podatki prebrani
