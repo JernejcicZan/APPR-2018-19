@@ -1,6 +1,6 @@
 library(ggplot2)
 library(dplyr)
-
+library(tidyr)
 
 #Podatki uvoženi
 BDP_in_rast
@@ -26,7 +26,12 @@ names(emi_po_starosti_in_spolu) <- c("Leto", "Država","Starost", "Spol", "Štev
 names(imig_po_spolu_in_starosti) <- c("Leto", "Država", "Starost", "Spol", "število")
 names(imigr_po_narodnosti) <- c("Leto", "Država", "Državljanstvo", "število")
 
-#Risanje grafov
-# gdp <- filter(BDP_in_rast,BDP_rast == "Current prices, euro per capita")
-# View(gdp)
-# ggplot2()
+melt(BDP_in_rast)
+BDP_in_rast <- spread(BDP_in_rast, BDP_rast, število)
+names(BDP_in_rast) <- c("Leto", "Država", "Rast BDP", "BDP per capita")
+
+#v imig_po_spolu_starosti moramo pobrisat vrstice, kjer je starostena od
+#(Less than 15 years,From 15 to 64 years,From 65 to 69 years),enako pri emi_po_spolu
+
+
+
