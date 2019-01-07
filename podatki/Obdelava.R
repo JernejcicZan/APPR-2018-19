@@ -43,4 +43,10 @@ imig_po_spolu_in_starosti <- subset(imig_po_spolu_in_starosti, Leto>2010)
 emi_po_starosti_in_spolu <- subset(emi_po_starosti_in_spolu, Leto>2010)
 BDP_in_rast <- subset(BDP_in_rast, Leto>2010)
 
+BDP_in_rast[BDP_in_rast==":"]<-0
+emi_next[emi_next==":"]<-0
+emi_po_starosti_in_spolu[emi_po_starosti_in_spolu==":"]<-0
+imig_po_spolu_in_starosti[imig_po_spolu_in_starosti==":"]<-0
+imigr_po_narodnosti[imigr_po_narodnosti==":"]<-0
+
 
