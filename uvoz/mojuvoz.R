@@ -33,6 +33,12 @@ imig_po_narodnosti[,c(4,5,6,8)]<-list(NULL)
 names(imig_po_narodnosti) <- c("Leto", "Država", "Državljanstvo", "število")
 
 
+#Moje tabele
+BDP
+emi_naslednja
+emi_starost_spol
+imig_starost_spol
+imig_po_narodnosti
 
 
  
