@@ -1,15 +1,12 @@
 "DATASET: Main GDP aggregates per capita [nama_10_pc]"
 
-"LAST UPDATE: 11.12.18 20:16:16"
+"LAST UPDATE: 03.01.19 20:15:52"
 
-"EXTRACTION DATE: 12.12.18 13:50:44"
+"EXTRACTION DATE: 07.01.19 18:08:45"
 
 "SOURCE OF DATA: Eurostat"
 
 "TIME"
-"2008"
-"2009"
-"2010"
 "2011"
 "2012"
 "2013"
@@ -19,12 +16,6 @@
 "2017"
 
 "GEO"
-"European Union (current composition)"
-"European Union (without United Kingdom)"
-"European Union (15 countries)"
-"Euro area (EA11-2000, EA12-2006, EA13-2007, EA15-2008, EA16-2010, EA17-2013, EA18-2014, EA19)"
-"Euro area (19 countries)"
-"Euro area (12 countries)"
 "Belgium"
 "Bulgaria"
 "Czechia"
@@ -42,7 +33,6 @@
 "Lithuania"
 "Luxembourg"
 "Hungary"
-"Malta"
 "Netherlands"
 "Austria"
 "Poland"
@@ -53,17 +43,11 @@
 "Finland"
 "Sweden"
 "United Kingdom"
-"Iceland"
-"Liechtenstein"
 "Norway"
 "Switzerland"
-"Former Yugoslav Republic of Macedonia, the"
-"Albania"
-"Serbia"
 
 "UNIT"
 "Current prices, euro per capita"
-"Chain linked volumes, percentage change on previous period, per capita"
 
 "NA_ITEM"
 "Gross domestic product at market prices"
