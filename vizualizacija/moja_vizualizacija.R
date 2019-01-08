@@ -21,5 +21,5 @@ Evropa <- filter(Evropa, long < 55 & long > -45 & lat > 30 & lat < 85)
 
 ggplot(Evropa, aes(x=long, y=lat, group=group, fill=NAME)) + 
   geom_polygon() + 
-  labs(title="Evropa - osnovna slika") +
+  labs(title="Evropa") +
   theme(legend.position="none")
