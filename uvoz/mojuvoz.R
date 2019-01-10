@@ -12,20 +12,21 @@ names(BDP) <- c("Leto", "Država", "BDP")
 #Uvoz in ureditev tabele za izseljevanje
 emi_naslednja <- read_csv("podatki/emi_naslednja.csv", na=":")
 emi_naslednja[,c(4:7,9)] <- list(NULL)
-names(emi_naslednja) <- c("Leto", "Država", "Država izselitve", "število")
+names(emi_naslednja) <- c("Leto", "Država", "Država izselitve", "Izseljeni")
 
 
 #Uvoz in ureditev tabele za izseljevanje po starosti in spolu
 emi_starost_spol <- read_csv("podatki/emi_starost_spol.csv", na=":")
 emi_starost_spol[,c(3,4,6,9)] <- list(NULL)
-names(emi_starost_spol) <- c("Leto", "Država","Starost", "Spol", "Število")
+names(emi_starost_spol) <- c("Leto", "Država","Starost", "Spol", "Izseljeni")
 
 
 #Uvoz in ureditev tabele za priseljevanje po starosti in spolu
 imig_starost_spol <- read_csv("podatki/imig_starost_spol.csv",na=":")
 imig_starost_spol[,c(3,4,6,9)] <- list(NULL)
-names(imig_starost_spol) <- c("Leto", "Država", "Starost", "Spol", "število")
-
+names(imig_starost_spol) <- c("Leto", "Država", "Starost", "Spol", "Priseljeni")
+imig_starost_spol <- imig_starost_spol[!(imig_starost_spol$Država=="Former Yugoslav Republic of Macedonia, the"
+),]
 
 #Uvoz in ureditev tabele za priseljevanje po narodnosti
 imig_po_narodnosti <- read_csv("podatki/imig_po_narodnosti.csv", na=":")
