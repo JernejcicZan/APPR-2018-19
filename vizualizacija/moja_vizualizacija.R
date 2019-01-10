@@ -11,8 +11,7 @@ library(munsell)
 source("lib/uvozi.zemljevid.r") #Nastavi pravo datoteko
 
 zemljevid <- uvozi.zemljevid("https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/cultural/ne_50m_admin_0_countries.zip",
-                             "ne_50m_admin_0_countries") %>%
-  fortify()
+                             "ne_50m_admin_0_countries") %>% fortify()
 
 
 # Zemljevid sveta skrčimo na zemljevid Evrope
