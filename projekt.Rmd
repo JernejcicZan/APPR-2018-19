@@ -124,6 +124,11 @@ Iz grafa za izseljevanje v 2016 za Poljske lahko razberemo, da se v največji me
 print(graf_izseljevanja_Pol2)
 ```
 
+Primerjal sem še neto prirastek za obe državi in opazimo, da ima Nemčija pozitivnega, Poljska pa negativnega.
+
+```{r graf_neto_pol_nem, echo=FALSE, message=FALSE, warning=FALSE}
+print(graf_neto_pol_nem)
+```
 
 Primerjal sem še povezavo med BDP in neto prirastkom priseljevanja. Vidimo lahko, da imajo države z višjim BDP pozitiven prirastek, države z nižjim pa negativnega.
 
