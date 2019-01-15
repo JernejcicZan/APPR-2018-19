@@ -1,5 +1,5 @@
 ---
-title: "Poročilo pri predmetu Analiza podatkov s programom R"
+title: "Analiza migracij v Evropi"
 author: "Žan Jernejčič"
 output:
   html_document: default
@@ -7,7 +7,7 @@ output:
     includes:
       in_header: lib/styles.sty
     latex_engine: xelatex
-runtime: shiny
+
 ---
 
 ```{r setup, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
@@ -28,7 +28,7 @@ source("lib/rstudio.r", encoding="UTF-8")
 
 Analiza migracij v Evropi po stratosni skupini, spolu, nacionalnosti. Primerjava z BDP na prebivalca.
 
-![](slike/grb.png)
+![](slike/European_Union.png)
 
 ***
 
@@ -79,14 +79,6 @@ Tabele so uvožene v obliki csv.
 
 
 
-**Opomba**: da bi razpredelnica `obcine` res bila v obliki *tidy data*, bi morali odstraniti stolpec `gostota` (saj je izpeljan iz stolpcev `povrsina` in `prebivalci`), podatke o pokrajinah pa bi morali premakniti v drugo razpredelnico, saj nekatere občine pripadajo dvema pokrajinama. Podobno bi morali narediti tudi s stolpcem `odcepitev`.
-
-Spodnji graf prikazuje porazdelitev števila naselij v občinah.
-
-```{r histogram, echo=FALSE, message=FALSE, fig.align='center', fig.cap='Histogram števila naselij v občinah'}
-ggplot(obcine, aes(x=naselja)) + geom_histogram() +
-  ggtitle("Pogostost števila naselij") + xlab("Število naselij") + ylab("Število občin")
-```
 
 ***
 
@@ -96,37 +88,59 @@ ggplot(obcine, aes(x=naselja)) + geom_histogram() +
 source("vizualizacija/vizualizacija.r", encoding="UTF-8")
 ```
 
-Spodnji zemljevid prikazuje povprečno velikost družine za vsako občino.
-
-```{r zemljevid, echo=FALSE, fig.align='center', fig.cap='Zemljevid povprečnega števila otrok v družini'}
-ggplot() + geom_polygon(data=left_join(zemljevid, povprecja, by=c("OB_UIME"="obcina")),
-                        aes(x=long, y=lat, group=group, fill=povprecje)) +
-  ggtitle("Povprečno število otrok v družini") + xlab("") + ylab("") +
-  guides(fill=guide_colorbar(title="Povprečje"))
+Na prvem grafu lahko vidim gibanje BDP na prebivalca za 8 držav z največjim BDP
+```{r graf_BDP_najvecji, echo=FALSE, message=FALSE, warning=FALSE}
+print(graf_BDP_najvecji)
 ```
 
-***
-
-# Napredna analiza podatkov
-
-```{r analiza, echo=FALSE, message=FALSE}
-source("analiza/analiza.r", encoding="UTF-8")
+Na drugem pa gibanje BDP na prebivalca za 8 držav z najmanjšim BDP
+```{r graf_BDP_najmanjsi, echo=FALSE, message=FALSE, warning=FALSE}
+print(graf_BDP_najmanjsi)
 ```
 
-Spodnji graf prikazuje povezavo med številom naselij in površino občine.
+Odločil sem se da bom podrobneje analiziral Nemčijo in Poljsko. Pri Nemčiji si bom pogledal priseljevanje po starosti in spolu, pri Poljski pa odseljevanje.
 
-```{r graf, echo=FALSE, fig.align='center', fig.cap='Povezava med številom naselij in površino občine'}
-ggplot(inner_join(obcine, data.frame(obcina=names(skupine),
-                                     skupina=factor(skupine)), by="obcina")
-, aes(x=povrsina, y=naselja, color=skupina, size=prebivalci/1000)) + geom_point() +
-  ggtitle("Število naselij glede na površino občine") +
-  xlab(expression("Površina (km"^2 * ")")) + ylab("Št. naselij") +
-  guides(color=guide_legend(title="Skupina"),
-         size=guide_legend(title="Prebivalci (* 1000)"))
+```{r graf_priseljevanja_Nem1, echo=FALSE, message=FALSE, warning=FALSE}
+print(graf_priseljevanja_Nem1)
+```
+Vidimo lahko da se je v času migrantske krize priseljevanje v Nemčijo povečevalo in doseglo vrh leta 2015. Opazimo da je bilo moških več kot kot žensk.
+
+```{r graf_priseljevanja_Nem2, echo=FALSE, message=FALSE, warning=FALSE}
+print(graf_priseljevanja_Nem2)
+```
+V grafu za priseljevanje po strarosti v letu 2016 je razvidno, da je bil velik del priseljencev mlajši od 35 let.
+
+```{r graf_izseljevanja_Pol1, echo=FALSE, message=FALSE, warning=FALSE}
+print(graf_izseljevanja_Pol1)
+```
+V grafu izseljevanja po spolu za Poljsko vidimo, da je delež moških v zadnjih letih večji od deleža  žensk. Izseljevanje se je začelo zmanjševati v zadnjih letih.
+
+```{r graf_izseljevanja_Pol2, echo=FALSE, message=FALSE, warning=FALSE}
+print(graf_izseljevanja_Pol2)
 ```
 
-***
+Iz grafa za izseljevanje v 2016 za Poljske lahko razberemo, da se v največji meri izseljujejo mladi tj. med 25 in 40 let. 
 
-```{r shiny, echo=FALSE}
-shinyAppDir("shiny", options=list(width="100%", height=600))
+```{r graf_neto_pol_nem, echo=FALSE, message=FALSE, warning=FALSE}
+print(graf_neto_pol_nem)
 ```
+
+Primerjal sem še neto prirastek za obe državi od 2011 do 2016. Razvidno je, da ima Nemčija skozi leta vedno pozitiven prirastek Poljska pa negativnega.
+
+```{r graf_bdp_neto, echo=FALSE, message=FALSE, warning=FALSE}
+print(graf_bdp_neto)
+```
+
+Primerjal sem še povezavo med BDP in neto prirastkom priseljevanja. Vidimo lahko, da imajo države z višjim BDP pozitiven prirastek, države z nižjim pa negativnega.
+
+
+Za konec pa še zemljevid, ki prikazuje število priseljencev v posamezne države v Evropi v letu 2016. Svetlejše barve prikazujejo več priseljencev, temnejše pa manj. 
+
+```{r map, echo=FALSE, fig.align='center', warning=FALSE, fig.cap='Zemljevid števila priseljencev v letu 2016'}
+print(map)
+```
+
+
+
+
+
