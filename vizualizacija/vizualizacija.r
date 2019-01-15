@@ -62,7 +62,6 @@ graf_izseljevanja_Pol2 <- ggplot(data=emi_starost_spol %>% filter(Država=="Pola
 graf_neto_pol_nem <- ggplot(data=neto_tabela %>% filter(Država %in% c("Poland","Germany")),
                             aes(x=Leto, y=Neto, label=Država)) + 
   geom_line(aes(group = Država,color=Država), stat = 'identity', position = 'dodge') + 
-  geom_point(aes(group = Država,color=Država), stat = 'identity', position = 'dodge') + 
   labs(title="Neto prirastek za Nemčijo in Poljsko")
 
 neto_tabela <- neto_tabela%>%filter(Starost=="Total", Spol=="Total", Leto!=2017)

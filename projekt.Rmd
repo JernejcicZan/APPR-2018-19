@@ -43,39 +43,39 @@ Tabele so uvožene v obliki csv.
 
 1. tabela:
 `BDP na prebivalca` - podatki o BDP-ju za države od 2011 do 2017
-  - `Leto` - spremenljivka:  (numeric),
-  - `Država` - spremenljivka: (character)
-  - `BDP` - meritev: BDP na prebivalca (numeric).
+  * `Leto` - spremenljivka:  (numeric),
+  * `Država` - spremenljivka: (character)
+  * `BDP` - meritev: BDP na prebivalca (numeric).
 
 2.tabela:
 `emi_naslednja` - Kam se izseljujejo
-  - `Leto` - spremenljivka: (numeric),
-  - `Država` - spremenljivka: (character),
-  - `Država izselitve` - spremenljivka : (character),
-  - `Število` - meritev : (numeric)
+  * `Leto` - spremenljivka: (numeric),
+  * `Država` - spremenljivka: (character),
+  * `Država izselitve` - spremenljivka : (character),
+  * `Število` - meritev : (numeric)
   
 3.tabela:
 `emi_starost_spol` - izseljevanje po starosti in spolu
-  - `Leto` - spremenljivka: (numeric),
-  - `Država` - spremenljivka: (character),
-  - `Starost` - spremenljivka : (character),
-  - `Spol` - spremenljivka : (character),
-  - `Število` - meritev : (numeric)
+  * `Leto` - spremenljivka: (numeric),
+  * `Država` - spremenljivka: (character),
+  * `Starost` - spremenljivka : (character),
+  * `Spol` - spremenljivka : (character),
+  * `Število` - meritev : (numeric)
 
 4.tabela:
 `imi_starost_spol` - priseljevanje po starosti in spolu
-  - `Leto` - spremenljivka: (numeric),
-  - `Država` - spremenljivka: (character),
-  - `Starost` - spremenljivka : (character),
-  - `Spol` - spremenljivka : (character),
-  - `Število` - meritev : (numeric)
+  * `Leto` - spremenljivka: (numeric),
+  * `Država` - spremenljivka: (character),
+  * `Starost` - spremenljivka : (character),
+  * `Spol` - spremenljivka : (character),
+  * `Število` - meritev : (numeric)
 
 5.tabela:
 `imig_po_narodnosti` - Narodnosti priseljencev
-  - `Leto` - spremenljivka: (numeric),
-  - `Država` - spremenljivka: (character),
-  - `Državljanstvo` - spremenljivka : (character),
-  - `Število` - meritev : (numeric)
+  * `Leto` - spremenljivka: (numeric),
+  * `Država` - spremenljivka: (character),
+  * `Državljanstvo` - spremenljivka : (character),
+  * `Število` - meritev : (numeric)
 
 
 
@@ -100,38 +100,41 @@ print(graf_BDP_najmanjsi)
 
 Odločil sem se da bom podrobneje analiziral Nemčijo in Poljsko. Pri Nemčiji si bom pogledal priseljevanje po starosti in spolu, pri Poljski pa odseljevanje.
 
+Vidimo lahko da se je v času migrantske krize priseljevanje v Nemčijo povečevalo in doseglo vrh leta 2015. Opazimo da je bilo moških več kot kot žensk.
+
 ```{r graf_priseljevanja_Nem1, echo=FALSE, message=FALSE, warning=FALSE}
 print(graf_priseljevanja_Nem1)
 ```
-Vidimo lahko da se je v času migrantske krize priseljevanje v Nemčijo povečevalo in doseglo vrh leta 2015. Opazimo da je bilo moških več kot kot žensk.
+
+V grafu za priseljevanje po strarosti v letu 2016 je razvidno, da je bil velik del priseljencev mlajši od 35 let.
 
 ```{r graf_priseljevanja_Nem2, echo=FALSE, message=FALSE, warning=FALSE}
 print(graf_priseljevanja_Nem2)
 ```
-V grafu za priseljevanje po strarosti v letu 2016 je razvidno, da je bil velik del priseljencev mlajši od 35 let.
+
+V grafu izseljevanja po spolu za Poljsko vidimo, da je delež moških v zadnjih letih večji od deleža  žensk. Izseljevanje se je začelo zmanjševati v zadnjih letih.
 
 ```{r graf_izseljevanja_Pol1, echo=FALSE, message=FALSE, warning=FALSE}
 print(graf_izseljevanja_Pol1)
 ```
-V grafu izseljevanja po spolu za Poljsko vidimo, da je delež moških v zadnjih letih večji od deleža  žensk. Izseljevanje se je začelo zmanjševati v zadnjih letih.
+
+Iz grafa za izseljevanje v 2016 za Poljske lahko razberemo, da se v največji meri izseljujejo mladi tj. med 25 in 40 let.
 
 ```{r graf_izseljevanja_Pol2, echo=FALSE, message=FALSE, warning=FALSE}
 print(graf_izseljevanja_Pol2)
 ```
 
-Iz grafa za izseljevanje v 2016 za Poljske lahko razberemo, da se v največji meri izseljujejo mladi tj. med 25 in 40 let. 
+Primerjal sem še neto prirastek za obe državi od 2011 do 2016. Razvidno je, da ima Nemčija skozi leta vedno pozitiven prirastek Poljska pa negativnega.
 
 ```{r graf_neto_pol_nem, echo=FALSE, message=FALSE, warning=FALSE}
 print(graf_neto_pol_nem)
 ```
 
-Primerjal sem še neto prirastek za obe državi od 2011 do 2016. Razvidno je, da ima Nemčija skozi leta vedno pozitiven prirastek Poljska pa negativnega.
+Primerjal sem še povezavo med BDP in neto prirastkom priseljevanja. Vidimo lahko, da imajo države z višjim BDP pozitiven prirastek, države z nižjim pa negativnega.
 
 ```{r graf_bdp_neto, echo=FALSE, message=FALSE, warning=FALSE}
 print(graf_bdp_neto)
 ```
-
-Primerjal sem še povezavo med BDP in neto prirastkom priseljevanja. Vidimo lahko, da imajo države z višjim BDP pozitiven prirastek, države z nižjim pa negativnega.
 
 
 Za konec pa še zemljevid, ki prikazuje število priseljencev v posamezne države v Evropi v letu 2016. Svetlejše barve prikazujejo več priseljencev, temnejše pa manj. 
