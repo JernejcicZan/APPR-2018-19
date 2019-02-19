@@ -43,12 +43,14 @@ Tabele so uvožene v obliki csv.
 
 1. tabela:
 `BDP na prebivalca` - podatki o BDP-ju za države od 2011 do 2017
+
   * `Leto` - spremenljivka:  (numeric),
   * `Država` - spremenljivka: (character)
   * `BDP` - meritev: BDP na prebivalca (numeric).
 
 2.tabela:
 `emi_naslednja` - Kam se izseljujejo
+
   * `Leto` - spremenljivka: (numeric),
   * `Država` - spremenljivka: (character),
   * `Država izselitve` - spremenljivka : (character),
@@ -56,6 +58,7 @@ Tabele so uvožene v obliki csv.
   
 3.tabela:
 `emi_starost_spol` - izseljevanje po starosti in spolu
+
   * `Leto` - spremenljivka: (numeric),
   * `Država` - spremenljivka: (character),
   * `Starost` - spremenljivka : (character),
@@ -64,6 +67,7 @@ Tabele so uvožene v obliki csv.
 
 4.tabela:
 `imi_starost_spol` - priseljevanje po starosti in spolu
+
   * `Leto` - spremenljivka: (numeric),
   * `Država` - spremenljivka: (character),
   * `Starost` - spremenljivka : (character),
@@ -72,6 +76,7 @@ Tabele so uvožene v obliki csv.
 
 5.tabela:
 `imig_po_narodnosti` - Narodnosti priseljencev
+
   * `Leto` - spremenljivka: (numeric),
   * `Država` - spremenljivka: (character),
   * `Državljanstvo` - spremenljivka : (character),
