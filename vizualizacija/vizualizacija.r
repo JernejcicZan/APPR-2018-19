@@ -9,13 +9,12 @@ library(munsell)
 
 
 
-najvecji.bdp <- BDP %>% filter(Leto == 2011) %>%
-  top_n(8, BDP_pc)
+najvecji.bdp <- BDP %>% filter(Leto == 2011) %>% top_n(8, BDP_pc)
 
 najnizji.bdp <- BDP %>% filter(Leto==2011) %>% top_n(8,-1*BDP_pc)
 
 
-#Graf BDP za 6 držav z najvišjim in najnižjim BDP-jem
+#Graf BDP za 8 držav z najvišjim in najnižjim BDP-jem
 graf_BDP_najvecji <- ggplot(data = BDP %>% filter(Država %in% najvecji.bdp$Država ), 
                    aes(x=Leto, y=BDP_pc, label=Država)) + 
   geom_line(aes(group = Država,color=Država), stat = 'identity', position = 'dodge')
