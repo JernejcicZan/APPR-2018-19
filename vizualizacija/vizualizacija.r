@@ -17,20 +17,25 @@ najnizji.bdp <- BDP %>% filter(Leto==2011) %>% top_n(8,-1*BDP_pc)
 #Graf BDP za 8 držav z najvišjim in najnižjim BDP-jem
 graf_BDP_najvecji <- ggplot(data = BDP %>% filter(Država %in% najvecji.bdp$Država ), 
                    aes(x=Leto, y=BDP_pc, label=Država)) + 
-  geom_line(aes(group = Država,color=Država), stat = 'identity', position = 'dodge')
+  geom_line(aes(group = Država,color=Država), stat = 'identity', position = 'dodge') + 
+  guides(color=guide_legend("Država")) +
+  ylab('BDP na prebivalca')
 
 graf_BDP_najmanjsi <- ggplot(data = BDP %>% filter(Država %in% najnizji.bdp$Država ), 
                             aes(x=Leto, y=BDP_pc, label=Država)) + 
-  geom_line(aes(group = Država,color=Država), stat = 'identity', position = 'dodge')
+  geom_line(aes(group = Država,color=Država), stat = 'identity', position = 'dodge') + 
+  guides(color=guide_legend("Država")) +
+  ylab('BDP na prebivalca')
 
 
 #Prikazal bom grafe za Nemčijo(priseljevanje) in Poljsko(odseljevanje)
 #Graf za priseljevanje po spolu za Nemčijo 
  
 graf_priseljevanja_Nem1 <- ggplot(data=imig_starost_spol %>% filter(Država=="Germany", Spol!="Total"),
-                    aes(x=Leto, y=Priseljeni, fill=Spol)) + 
+                    aes(x=Leto, y=Priseljeni/1000000, fill=Spol)) + 
   geom_bar(stat="identity", position="stack") + 
-  labs(title="Priseljevanje od 2011 do 2016 po spolu za Nemčijo")
+  ggtitle("Priseljevanje od 2011 do 2016 po spolu za Nemčijo")+
+  ylab('Priseljeni v milijonih')
 
 
 #Graf za priseljevanje po starosti za Nemčijo 
@@ -38,7 +43,8 @@ graf_priseljevanja_Nem1 <- ggplot(data=imig_starost_spol %>% filter(Država=="Ge
 graf_priseljevanja_Nem2 <- ggplot(data=imig_starost_spol %>% filter(Država=="Germany" &Leto==2016 &Starost!="Total"),
                                      aes(x="", y=Priseljeni, fill=Starost)) +
   geom_bar(stat="identity", position="dodge") + 
-  labs(title="Priseljevanje v 2016 po starosti za Nemčijo")
+  ggtitle("Priseljevanje v 2016 po starosti za Nemčijo")+
+  ylab('Izseljeni')
 
 
 najvec.izseljevanja <- emi_starost_spol %>% filter(Starost=="Total", Spol=="Total", Država %in% najnizji.bdp$Država) %>%
@@ -47,9 +53,10 @@ najvec.izseljevanja <- emi_starost_spol %>% filter(Starost=="Total", Spol=="Tota
 #Graf odseljevanja po spolu za Poljsko 
 
 graf_izseljevanja_Pol1 <- ggplot(data=emi_starost_spol %>% filter(Država=="Poland",Starost=="Total"),
-                                aes(x=Leto, y=Izseljeni, fill=Spol)) + 
+                                aes(x=Leto, y=Izseljeni/1000, fill=Spol)) + 
   geom_bar(stat="identity", position = "dodge") + 
-  labs(title = "Izseljevanje po spolu od 2011 do 2016 za Poljsko")
+  labs(title = "Izseljevanje po spolu od 2011 do 2016 za Poljsko") +
+  ylab('Izseljeni v tisočih')
 
 #Graf odseljevanja po starosti za Poljsko 
 
@@ -62,7 +69,8 @@ graf_izseljevanja_Pol2 <- ggplot(data=emi_starost_spol %>% filter(Država=="Pola
 graf_neto_pol_nem <- ggplot(data=neto_tabela %>% filter(Država %in% c("Poland","Germany")),
                             aes(x=Leto, y=Neto, label=Država)) + 
   geom_bar(aes(group = Država,fill=Država), stat = 'identity', position = 'dodge') + 
-  labs(title="Neto prirastek za Nemčijo in Poljsko")
+  labs(title="Neto prirastek za Nemčijo in Poljsko") + 
+  guides(color=guide_legend("Država"))
 
 neto_tabela <- neto_tabela%>%filter(Starost=="Total", Spol=="Total", Leto!=2017)
 neto_tabela <- neto_tabela[c(-3,-4)]
@@ -70,9 +78,12 @@ neto_bdp <- left_join(BDP,neto_tabela)
 
 #Graf odvisnosti neto priseljevanja od BDP pc 
 graf_bdp_neto <- ggplot(data=neto_bdp %>% filter(Leto==2016), 
-                        aes(x=BDP_pc,y=Neto)) + 
+                        aes(x=BDP_pc,y=Neto/1000)) + 
   geom_point(aes(color=Država)) + 
-  labs(title="Povezava med BDP in neto prirastkom priseljevanja")
+  ggtitle("Povezava med BDP in neto prirastkom priseljevanja") +
+  ylab('Neto prirastek v tisočih') +
+  xlab('BDP na prebivalca')
+  guides(color=guide_legend("Država"))
 
 
 
