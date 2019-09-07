@@ -23,16 +23,14 @@ napoved.prirastka2 <- mutate(cas, Neto=predict(podatki, cas))
 
 graf.napovedi.prirastka1 <- ggplot(data=najrazvitejse, aes(x=Leto, y=Neto)) + 
   geom_smooth(method = "lm", formula = y ~ x + I(x^2), fullrange = TRUE) +
-  geom_point(data=napoved.prirastka1) 
-
-
+  geom_point(data=napoved.prirastka1) +
+  labs(title = 'Napoved prirastka za države z največjim BDP')
 
 
 graf.napovedi.prirastka2 <- ggplot(data=najmanj_razvite, aes(x=Leto, y=Neto)) + 
   geom_smooth(method = "lm", formula = y ~ x + I(x^2), fullrange = TRUE) +
-  geom_point(data=napoved.prirastka2) 
+  geom_point(data=napoved.prirastka2) +
+  labs(title = 'Napoved prirastka za države z najmanjšim BDP')
+  
 
 
-
-
-print(graf.napovedi.prirastka2)

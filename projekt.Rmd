@@ -142,13 +142,28 @@ print(graf_bdp_neto)
 ```
 
 
-Za konec pa še zemljevid, ki prikazuje število priseljencev v posamezne države v Evropi v letu 2016. Svetlejše barve prikazujejo več priseljencev, temnejše pa manj. 
+Z zemljevidom pa bom prikazal število priseljencev v posamezne države v Evropi v letu 2016. Svetlejše barve prikazujejo več priseljencev, temnejše pa manj. 
 
 ```{r map, echo=FALSE, fig.align='center', warning=FALSE, fig.cap='Zemljevid števila priseljencev v letu 2016'}
 print(map)
 ```
 
 
+```{r analiza, echo=FALSE, message=FALSE, warning=FALSE}
+source("analiza/analiza.r", encoding="UTF-8")
+```
 
+Z napredno analizo sem želel ugotoviti ali se bo izseljevanje iz držav z manjšim BDP nadaljevalo. Tako sem pogledal 8 držav z najnižjim BDP in ugotovil, da bo prirastek še vedno negativen.
 
+```{r graf.napovedi.prirastka2, echo=FALSE, message=FALSE, warning=FALSE}
+print(graf.napovedi.prirastka2)
+```
+
+Za konec sem želel še napovedati kakšen bo skupen prirastek v 8 opazovanih državah z največjim BDP. Predvidevamo lahko, da bo neto prirastek vedno večji.
+
+```{r graf.napovedi.prirastka1, echo=FALSE, message=FALSE, warning=FALSE}
+print(graf.napovedi.prirastka1)
+```
+
+Zaključek: Vidimo lahko, da je priseljevanje in izseljevanje močno povezano z BDP-jem in pričakovati je, da se bo trend tudi naaljeval v prihodnje. 
 
